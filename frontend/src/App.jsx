@@ -1,21 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
-import "./main.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navbar />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/reservations" element={<Reservations />} />
-          <Route path="/write-review" element={<WriteReview />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+      <Header />
+
+      <div style={{ minHeight: "70vh", padding: "40px" }}>
+        <h1>Home Page</h1>
+        <p>Website under construction</p>
+      </div>
+
       <Footer />
     </BrowserRouter>
   );
