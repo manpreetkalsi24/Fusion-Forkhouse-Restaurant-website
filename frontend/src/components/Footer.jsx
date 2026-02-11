@@ -5,10 +5,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
-
-        
         <div className="footer-column">
-          <h3 className="footer-logo">Eatery</h3>
+          <h3 className="footer-logo">Fusion Forkhouse</h3>
           <p>Unforgettable culinary experiences await at Heaven Palate.</p>
           <Link to="/reservations" className="footer-btn">
             Reserve your Table
@@ -38,7 +36,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; 2025 Eatery, All rights reserved by Manpreet Kaur.</p>
+        <p>&copy; 2026 Fusion Forkhouse, All rights reserved by Manpreet Kaur.</p>
       </div>
     </footer>
   );
