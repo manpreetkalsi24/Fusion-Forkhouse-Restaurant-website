@@ -1,0 +1,65 @@
+.hero-slider {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Dark overlay layer */
+.slide::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* Dark transparent layer */
+  top: 0;
+  left: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  color: white;
+  max-width: 600px;
+  z-index: 2; 
+}
+
+.overlay h1 {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.slider-btn {
+  padding: 14px 28px;
+  background-color: #c97a2b; 
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: #a85f1f;
+}
