@@ -56,6 +56,49 @@
 }
 
 
+/* Features Section */
+.features-section {
+  background-color: #f5efe6;
+  padding: 60px 10%;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  background-color: #efe8df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-icon img {
+  width: 40px;
+}
+
+.feature-item h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.feature-divider {
+  width: 1px;
+  height: 60px;
+  background-color: #ccc;
+}
+
 /* ABOUT US SECTION*/
 .about-us {
   background-color: #fff8ee;
