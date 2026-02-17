@@ -144,8 +144,8 @@ export default function Home() {
             <div className="why-feature-item">Sweets & Cakes</div>
           </div>
 
-          {/* Call to Action Button */}
-          <button className="order-btn">Order Now</button>
+          {/* contact now Button */}
+          <button className="order-btn">Contact Now</button>
 
         </div>
 
