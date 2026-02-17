@@ -151,194 +151,77 @@
 }
 
 
-/* OUR MENU SECTION */
-.our-menu {
-  text-align: center;
+/* Entire section background */
+.popular-dishes {
+  background-color: #f5efe6; /* Same warm beige tone */
+  padding: 80px 10%;
 }
 
-.menu-header h2 {
-  color: #2b2b2b;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+/* Header section (title + button aligned) */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
 }
 
-.menu-header p {
+.section-header h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  max-width: 600px;
   color: #555;
-  max-width: 700px;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
 }
 
-.menu-grid {
+/* View All button */
+.view-btn {
+  background-color: #8b1e2d; /* Deep maroon */
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.view-btn:hover {
+  background-color: #6e1723;
+}
+
+/* Grid layout (3 columns like your screenshot) */
+.dishes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-.menu-item {
-  background-color: white;
+/* Each card */
+.dish-card {
+  background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
-.menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+/* Hover effect */
+.dish-card:hover {
+  transform: translateY(-8px);
 }
 
-.menu-item img {
+/* Image styling */
+.dish-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-.menu-item h3 {
-  margin: 1rem 0 0.5rem;
-  color: #2b2b2b;
-  font-size: 1.2rem;
-}
-
-.menu-item p {
-  margin-bottom: 1.5rem;
-  color: #d48c3f;
-  font-weight: 500;
-  font-size: 1rem;
-}
-
-.view-all {
-    padding-top: 50px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-images {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-}
-
-/* Reservation Banner Section */
-.reservation-banner {
-  background: url("/images/reservation.png") center/cover no-repeat;
-  height: 350px;
+/* Text & price container */
+.dish-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: white;
-  text-align: center;
-  margin-top: 4rem;
+  justify-content: space-between;
+  padding: 15px 20px;
+  font-weight: 600;
 }
-
-.reservation-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.banner-content {
-    position: relative;
-    z-index: 2;
-    max-width: 495px;
-    padding: 0 1rem;
-}
-
-.banner-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.btn-secondary {
-  background-color: #d48c3f;
-  color: white;
-  border: none;
-  padding: 0.8rem 1.8rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #c47a2b;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .banner-content h2 {
-    font-size: 1.5rem;
-  }
-}
-
-
-/* Customers Reviews Section*/
-.client-reviews {
-  background-color: #fff8ee;
-  padding: 5rem 2rem;
-  text-align: center;
-}
-
-.client-reviews h2 {
-  font-size: 2.5rem;
-  color: #2b2b2b;
-  margin-bottom: 3rem;
-}
-
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.review-card {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-}
-
-.review-card p {
-  font-style: italic;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.review-card h4 {
-    font-weight: 600;
-    color: #000;
-    text-transform: capitalize;
-    font-size: 20px;
-}
-
-.review-card span {
-  color: #d48c3f;
-  font-size: 0.9rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .client-reviews h2 {
-    font-size: 2rem;
-  }
-}
-

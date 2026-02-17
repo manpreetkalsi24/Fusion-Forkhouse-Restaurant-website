@@ -62,6 +62,83 @@ export default function Home() {
         </p>
       </section>
 
+      {/* Popular Dishes Section */}
+      <section className="popular-dishes">
+
+        {/* Section Header */}
+        <div className="section-header">
+          <div>
+            <h2>Our Popular Dishes</h2>
+            <p>
+              Explore a curated selection of delicious dishes crafted with the
+              freshest ingredients to satisfy every palate.
+            </p>
+          </div>
+
+          {/* View All Button */}
+          <button className="view-btn">View All</button>
+        </div>
+
+        {/* Dishes Grid */}
+        <div className="dishes-grid">
+
+          {/* Dish Card 1 */}
+          <div className="dish-card">
+            <img src="/images/tandoori.jpg" alt="Tandoori Wings" />
+            <div className="dish-info">
+              <h3>Tandoori Wings</h3>
+              <span>$12.99</span>
+            </div>
+          </div>
+
+          {/* Dish Card 2 */}
+          <div className="dish-card">
+            <img src="/images/salmon.jpg" alt="Grilled Salmon" />
+            <div className="dish-info">
+              <h3>Grilled Salmon</h3>
+              <span>$24.99</span>
+            </div>
+          </div>
+
+          {/* Dish Card 3 */}
+          <div className="dish-card">
+            <img src="/images/salad.jpg" alt="Classic Caesar Salad" />
+            <div className="dish-info">
+              <h3>Classic Caesar Salad</h3>
+              <span>$11.99</span>
+            </div>
+          </div>
+
+          {/* Dish Card 4 */}
+          <div className="dish-card">
+            <img src="/images/tiramisu.jpg" alt="Tiramisu" />
+            <div className="dish-info">
+              <h3>Tiramisu</h3>
+              <span>$10.99</span>
+            </div>
+          </div>
+
+          {/* Dish Card 5 */}
+          <div className="dish-card">
+            <img src="/images/chaat.jpg" alt="Chaat Papdi" />
+            <div className="dish-info">
+              <h3>Chaat Papdi</h3>
+              <span>$8.99</span>
+            </div>
+          </div>
+
+          {/* Dish Card 6 */}
+          <div className="dish-card">
+            <img src="/images/asparagus.jpg" alt="Grilled Asparagus" />
+            <div className="dish-info">
+              <h3>Grilled Asparagus</h3>
+              <span>$7.99</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
   );
 }
