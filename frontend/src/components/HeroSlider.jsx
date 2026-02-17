@@ -1,4 +1,4 @@
-// We are importing React hooks to manage state and side effects
+// importing React hooks to manage state and side effects
 import { useEffect, useState } from "react";
 
 // Importing the CSS file for styling the slider
@@ -27,11 +27,11 @@ const slides = [
 // This is the main HeroSlider component
 export default function HeroSlider() {
 
-  // We use useState to keep track of which slide is currently visible
+  // used useState to keep track of which slide is currently visible
   const [current, setCurrent] = useState(0);
 
   // useEffect runs after the component loads
-  // Here we are creating an automatic slide change every 4 seconds
+  //creating an automatic slide change every 4 seconds
   useEffect(() => {
 
     // setInterval changes the slide index every 4 seconds
