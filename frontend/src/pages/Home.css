@@ -100,7 +100,7 @@
 }
 
 /* ABOUT US SECTION*/
-.about-us {
+/* .about-us {
   background-color: #fff8ee;
   text-align: center;
   padding: 4rem 2rem;
@@ -148,16 +148,16 @@
   .about-gallery img {
     height: 250px;
   }
-}
+} */
 
 
-/* Entire section background */
+/* section background */
 .popular-dishes {
-  background-color: #f5efe6; /* Same warm beige tone */
+  background-color: #fff8ee; 
   padding: 80px 10%;
 }
 
-/* Header section (title + button aligned) */
+/* Header section  */
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -177,7 +177,7 @@
 
 /* View All button */
 .view-btn {
-  background-color: #8b1e2d; /* Deep maroon */
+  background-color: #c47a2b; 
   color: white;
   padding: 10px 25px;
   border: none;
@@ -190,7 +190,7 @@
   background-color: #6e1723;
 }
 
-/* Grid layout (3 columns like your screenshot) */
+/* Grid layout */
 .dishes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -224,4 +224,79 @@
   justify-content: space-between;
   padding: 15px 20px;
   font-weight: 600;
+}
+
+
+.why-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 100px 10%;
+  background-color: #021b2f; 
+  color: white;
+}
+
+/* Left content */
+.why-left {
+  flex: 1;
+}
+
+/* Subtitle */
+.why-subtitle {
+  color: #ff2c55;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+/* Main heading */
+.why-left h2 {
+  font-size: 38px;
+  line-height: 1.4;
+  margin-bottom: 40px;
+}
+
+.why-left h2 span {
+  color: #ff2c55;
+}
+
+/* Feature list */
+.why-features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.why-feature-item {
+  background: black;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Button */
+.order-btn {
+  background-color: #c47a2b;
+  border: none;
+  padding: 12px 30px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.order-btn:hover {
+  background-color: #d81e44;
+}
+
+/* Right image */
+.why-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.why-right img {
+  width: 90%;
+  max-width: 500px;
 }

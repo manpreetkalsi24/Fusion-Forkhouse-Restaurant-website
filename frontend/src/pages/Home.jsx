@@ -45,22 +45,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about-us">
-        <h2>About Fusion Forkhouse</h2>
-        <p>
-          Welcome to Fusion Forkhouse, where the rich heritage of Indian cuisine
-          meets a modern dining experience. Inspired by the diverse flavors of India,
-          our kitchen brings together traditional spices, fresh ingredients, and
-          contemporary presentation to create unforgettable dishes.
-        </p>
-        <p>
-          From creamy Butter Chicken to sizzling Tandoori platters, every recipe
-          is crafted with authenticity and passion. At Fusion Forkhouse, we believe
-          food is more than a meal — it's a celebration of culture, warmth, and
-          togetherness.
-        </p>
-      </section>
 
       {/* Popular Dishes Section */}
       <section className="popular-dishes">
@@ -135,9 +119,43 @@ export default function Home() {
               <span>$7.99</span>
             </div>
           </div>
-
         </div>
       </section>
+
+      <section className="why-section">
+
+        {/* Left Side Content */}
+        <div className="why-left">
+
+          {/* Small heading */}
+          <p className="why-subtitle">Why Choose Us</p>
+
+          {/* Main Heading */}
+          <h2>
+            Choose Quality for an unparalleled taste of India,
+            <span> right here in Canada.</span>
+          </h2>
+
+          {/* Feature List */}
+          <div className="why-features">
+            <div className="why-feature-item">Gift Cards</div>
+            <div className="why-feature-item">Private Dining Experience</div>
+            <div className="why-feature-item">Event & Party Reservations</div>
+            <div className="why-feature-item">Sweets & Cakes</div>
+          </div>
+
+          {/* Call to Action Button */}
+          <button className="order-btn">Order Now</button>
+
+        </div>
+
+        {/* Right Side Image */}
+        <div className="why-right">
+          <img src="/images/why_1_1.png" alt="Fresh Indian Food" />
+        </div>
+
+      </section>
+
 
     </div>
   );
