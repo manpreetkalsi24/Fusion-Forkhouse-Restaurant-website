@@ -54,10 +54,7 @@ export default function Reservations() {
           </div>
 
           {/* Message Field */}
-          <textarea
-            rows="4"
-            placeholder="Special Requests (Optional)"
-          ></textarea>
+          <textarea rows="4" placeholder="Special Requests (Optional)"></textarea>
 
           {/* Submit Button */}
           <button type="submit" className="reserve-btn">
