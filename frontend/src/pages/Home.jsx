@@ -60,7 +60,11 @@ export default function Home() {
           </div>
 
           {/* View All Button */}
-          <button className="view-btn">View All</button>
+          {/* <button className="view-btn">View All</button> */}
+
+          <Link to="/menu" className="view-btn">
+            View All
+          </Link>
         </div>
 
         {/* Dishes Grid */}
@@ -68,7 +72,7 @@ export default function Home() {
 
           {/* Dish Card 1 */}
           <div className="dish-card">
-            <img src="/images/tandoori.jpg" alt="Tandoori Wings" />
+            <img src="/images/t1.jpg" alt="Tandoori Wings" />
             <div className="dish-info">
               <h3>Tandoori Wings</h3>
               <span>$12.99</span>
@@ -77,7 +81,7 @@ export default function Home() {
 
           {/* Dish Card 2 */}
           <div className="dish-card">
-            <img src="/images/salmon.jpg" alt="Grilled Salmon" />
+            <img src="/images/g1.jpg" alt="Grilled Salmon" />
             <div className="dish-info">
               <h3>Grilled Salmon</h3>
               <span>$24.99</span>
@@ -86,7 +90,7 @@ export default function Home() {
 
           {/* Dish Card 3 */}
           <div className="dish-card">
-            <img src="/images/salad.jpg" alt="Classic Caesar Salad" />
+            <img src="/images/cs2.jpg" alt="Classic Caesar Salad" />
             <div className="dish-info">
               <h3>Classic Caesar Salad</h3>
               <span>$11.99</span>
@@ -95,7 +99,7 @@ export default function Home() {
 
           {/* Dish Card 4 */}
           <div className="dish-card">
-            <img src="/images/tiramisu.jpg" alt="Tiramisu" />
+            <img src="/images/tm3.webp" alt="Tiramisu" />
             <div className="dish-info">
               <h3>Tiramisu</h3>
               <span>$10.99</span>
@@ -104,7 +108,7 @@ export default function Home() {
 
           {/* Dish Card 5 */}
           <div className="dish-card">
-            <img src="/images/chaat.jpg" alt="Chaat Papdi" />
+            <img src="/images/cp3.jpg" alt="Chaat Papdi" />
             <div className="dish-info">
               <h3>Chaat Papdi</h3>
               <span>$8.99</span>
@@ -113,7 +117,7 @@ export default function Home() {
 
           {/* Dish Card 6 */}
           <div className="dish-card">
-            <img src="/images/asparagus.jpg" alt="Grilled Asparagus" />
+            <img src="/images/a1.jpg" alt="Grilled Asparagus" />
             <div className="dish-info">
               <h3>Grilled Asparagus</h3>
               <span>$7.99</span>
@@ -122,6 +126,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Why choose section */}
       <section className="why-section">
 
         {/* Left Side Content */}

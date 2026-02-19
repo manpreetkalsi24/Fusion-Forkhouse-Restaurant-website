@@ -1,5 +1,6 @@
 // importing React hooks to manage state and side effects
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Importing the CSS file for styling the slider
 import "./HeroSlider.css";
@@ -70,9 +71,9 @@ export default function HeroSlider() {
             <p>{slide.text}</p>
 
             {/* Reservation button */}
-            <button className="slider-btn">
+            <Link to="/reservations" className="slider-btn">
               Reserve Your Table
-            </button>
+            </Link>
           </div>
 
         </div>
