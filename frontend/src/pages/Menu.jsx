@@ -1,4 +1,18 @@
+// Importing CSS file
+import "./Menu.css";
 
+// This is our menu data
+const menuItems = [
+  { id: 1, name: "Crispy Calamari", price: 12.99, image: "/images/calamari.jpg" },
+  { id: 2, name: "Classic Caesar Salad", price: 11.99, image: "/images/caesar.jpg" },
+  { id: 3, name: "Grilled Salmon", price: 24.99, image: "/images/salmon.jpg" },
+  { id: 4, name: "Tiramisu", price: 10.99, image: "/images/tiramisu.jpg" },
+  { id: 5, name: "Crème Brûlée", price: 8.99, image: "/images/creme.jpg" },
+  { id: 6, name: "Grilled Asparagus", price: 7.99, image: "/images/asparagus.jpg" },
+  { id: 7, name: "Grilled Chicken Bites", price: 8.99, image: "/images/chicken.jpg" },
+  { id: 8, name: "Spicy Shrimp Pasta", price: 15.95, image: "/images/pasta.jpg" },
+  { id: 9, name: "Veggie Delight Wrap", price: 6.49, image: "/images/wrap.jpg" }
+];
 
 
 export default function Menu() {
