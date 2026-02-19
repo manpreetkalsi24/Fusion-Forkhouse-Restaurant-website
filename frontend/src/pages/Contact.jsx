@@ -1,6 +1,16 @@
 // Importing CSS file for styling
 import "./Contact.css";
 
+//for importing icons from react icons library
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube
+} from "react-icons/fa";
+
 export default function Contact() {
   return (
     <section className="contact-section">
@@ -17,7 +27,9 @@ export default function Contact() {
           <div className="contact-left">
 
             <div className="info-item">
-              <div className="icon">✉</div>
+              <div className="icon">
+                <FaEnvelope />
+              </div>
               <div>
                 <h4>Email us</h4>
                 <p>info@fusionforkhouse.com</p>
@@ -25,7 +37,9 @@ export default function Contact() {
             </div>
 
             <div className="info-item">
-              <div className="icon">📞</div>
+              <div className="icon">
+                <FaPhoneAlt />
+              </div>
               <div>
                 <h4>Phone us</h4>
                 <p>212 555-1212</p>
@@ -33,7 +47,9 @@ export default function Contact() {
             </div>
 
             <div className="info-item">
-              <div className="icon">📍</div>
+              <div className="icon">
+                <FaMapMarkerAlt />
+              </div>
               <div>
                 <h4>Find us</h4>
                 <p>58 Upper Humber Dr, Etobicoke</p>
@@ -43,11 +59,9 @@ export default function Contact() {
 
             {/* Social Icons */}
             <div className="social-icons">
-              <span>📷</span>
-              <span>📘</span>
-              <span>📌</span>
-              <span>▶</span>
-              <span>✖</span>
+              <FaInstagram />
+              <FaFacebookF />
+              <FaYoutube />
             </div>
 
           </div>
