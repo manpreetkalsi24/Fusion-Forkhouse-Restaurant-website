@@ -1,6 +1,6 @@
 .menu-page {
-  background-color: #f4ecda;
-  padding: 100px 5%;
+    background-color: #f4ecda;
+    padding: 50px 5% 100px;
 }
 
 .menu-header {
@@ -17,7 +17,7 @@
   color: #666;
 }
 
-/* CATEGORY BUTTONS */
+/* Category Buttons */
 .menu-categories {
   display: flex;
   justify-content: center;
@@ -51,6 +51,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  width:1200px;
+  margin: auto;
 }
 
 .menu-card {

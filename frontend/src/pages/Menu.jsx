@@ -42,7 +42,7 @@ export default function Menu() {
                 </p>
             </div>
 
-            {/* CATEGORY BUTTONS */}
+            {/* Category Buttons */}
             <div className="menu-categories">
                 {categories.map((cat) => (
                     <button
