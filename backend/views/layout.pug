@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    title= title
+    link(rel="stylesheet", href="/css/admin.css")
+    link(
+      rel="stylesheet",
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    )
+
+  body
+    .admin-container
+      // Sidebar
+      nav.sidebar
+        h2.logo Fusion Forkhouse Dashboard
+        ul.nav-links
+          li
+            a(href="/admin")
+              i.fa-solid.fa-house
+              | Dashboard
+          li
+            a(href="/admin/menu")
+              i.fa-solid.fa-utensils
+              | Menu
+          li
+            a(href="/admin/reservation")
+              i.fa-solid.fa-calendar-check
+              | Reservations
+          li
+            a(href="/admin/contacts")
+              i.fa-solid.fa-envelope
+              | Contact Messages
+          li
+            a(href="/admin/reviews")
+              i.fa-solid.fa-star
+              | Reviews
+
+      // Right side content and footer
+      main.main-content
+        section.content
+          block content
+
+        //footer content
+        footer.admin-footer
+          p
+            | &copy; #{new Date().getFullYear()} Fusion Forkhouse Admin Dashboard — All Rights Reserved
+          p
+            | Designed with 
+            i.fa-solid.fa-heart(style="color:#fff; margin:0 4px;")
+            | by Manpreet Kaur

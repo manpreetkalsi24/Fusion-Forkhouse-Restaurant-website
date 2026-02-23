@@ -21,7 +21,8 @@ export default function Reservations() {
 
           {/* Row 1 */}
           <div className="form-row">
-            <input type="text" placeholder="Full Name *" required />
+            <input type="text" placeholder="First Name *" required />
+            <input type="text" placeholder="Last Name *" required />
             <input type="tel" placeholder="Phone Number *" required />
           </div>
 

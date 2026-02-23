@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f8fb;
+  color: #2c2c2c;
+}
+
+/* MAIN LAYOUT */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background-color: #011f4b;
+  color: #fff;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar .logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  text-align: center;
+  color: #f6c89f;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  margin-bottom: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e3e3e3;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #f6c89f;
+  color: #03396c;
+}
+
+.nav-links i {
+  font-size: 1.2rem;
+}
+
+/* RIGHT CONTENT */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+/* PAGE CONTENT */
+.content {
+  flex: 1;
+  padding: 30px 50px;
+  background-color: #fdfdfd;
+}
+
+/* HEADINGS */
+h1, h2 {
+  color: #1e3a56;
+  margin-bottom: 20px;
+}
+
+/* DASHBOARD STATS */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.stat-box {
+  background: #fff;
+  border-radius: 14px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.stat-box i {
+  font-size: 2.4rem;
+  color: #c57b57;
+  background-color: #f6e5d8;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.stat-info h3 {
+  font-size: 1.1rem;
+  color: #1e3a56;
+}
+
+.stat-info p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 6px;
+  color: #c57b57;
+}
+
+/* FOOTER */
+.admin-footer {
+  background-color: #011f4b;
+  color: #fff;
+  padding: 12px 20px;
+  text-align: center;
+  font-size: 14px;
+  border-top: 1px solid #444;
+}
+
+.admin-footer p {
+  margin: 4px 0;
+}
