@@ -30,7 +30,7 @@ export default function About() {
             Discover a world where every dish is a masterpiece, meticulously 
             crafted with the finest ingredients. Our commitment to excellence 
             extends beyond the kitchen, creating an atmosphere that always 
-            resonates with sophistication as a celebration of culinary finesse.
+            resonates with sophistication as a celebration of good cooking ability.
           </p>
 
           <p className="description">
