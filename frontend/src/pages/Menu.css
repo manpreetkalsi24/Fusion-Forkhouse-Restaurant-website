@@ -1,69 +1,88 @@
-/* Page background */
 .menu-page {
-  background-color: #f4ecda; 
+  background-color: #f4ecda;
   padding: 100px 5%;
 }
 
-/* Header section */
 .menu-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .menu-header h1 {
   font-size: 48px;
-  margin-bottom: 10px;
   color: #2c2c2c;
 }
 
 .menu-header p {
-  color: #555;
+  color: #666;
 }
 
-/* Grid Layout */
+/* CATEGORY BUTTONS */
+.menu-categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  padding: 10px 25px;
+  border: 1px solid #8b2c2c;
+  background: transparent;
+  color: #8b2c2c;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.category-btn:hover {
+  background: #8b2c2c;
+  color: white;
+}
+
+.category-btn.active {
+  background: #8b2c2c;
+  color: white;
+}
+
+/* GRID */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  max-width:1200px;
-  margin:auto
 }
 
-/* Card Styling */
 .menu-card {
   background: white;
   border-radius: 12px;
   overflow: hidden;
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
 
 .menu-card:hover {
   transform: translateY(-5px);
 }
 
-/* Image */
-.menu-image img {
+.menu-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
 }
 
-/* Name + Price */
 .menu-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 15px 20px;
 }
 
 .menu-info h3 {
   font-size: 18px;
-  margin: 0;
 }
 
 .menu-info span {
-  font-weight: bold;
   color: #8b2c2c;
+  font-weight: bold;
 }
 
 /* Responsive */
