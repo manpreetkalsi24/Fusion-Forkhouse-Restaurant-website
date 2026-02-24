@@ -201,9 +201,7 @@ h1, h2 {
 
 /* Category badge */
 .category {
-  background: #e3f2fd;
   padding: 4px 10px;
-  border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
 }
@@ -230,4 +228,54 @@ h1, h2 {
   border-radius: 6px;
   text-decoration: none;
   color: white;
+}
+
+/* Add menu page css */
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-btn {
+  background: #0b5ed7;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.back-btn {
+  background: #e9ecef;
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: black;
 }

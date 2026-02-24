@@ -21,3 +21,31 @@ export const getMenuPage = async (req, res) => {
     res.send("Error loading menu");
   }
 };
+
+export const showAddMenuForm = (req, res) => {
+  res.render("admin/addMenu");
+};
+
+export const addMenuItem = async (req, res) => {
+  try {
+    console.log(req.body);
+    console.log(req.file);
+
+    const { name, category, price, description } = req.body;
+
+    const newItem = new Menu({
+      name,
+      category,
+      price,
+      description,
+      image: req.file ? "/uploads/" + req.file.filename : ""
+    });
+
+    await newItem.save();
+    res.redirect("/admin/menu");
+
+  } catch (error) {
+    console.log("FULL ERROR:", error);
+    res.send(error.message);
+  }
+};

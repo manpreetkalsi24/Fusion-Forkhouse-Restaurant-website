@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+  h1 Add New Menu Item
+
+  form(method="POST" action="/admin/menu/add" enctype="multipart/form-data")
+
+    .form-group
+      label Name
+      input(type="text" name="name" required)
+
+    .form-group
+      label Category
+      select(name="category" required)
+        option(value="" disabled selected) Select Category
+        option(value="Starters") Starters
+        option(value="Main Course") Main Course
+        option(value="Drinks") Drinks
+        option(value="Desserts") Desserts
+        option(value="Special") Special
+
+    .form-group
+      label Price
+      input(type="number" name="price" step="0.01" required)
+
+    .form-group
+      label Description
+      textarea(name="description")
+
+    .form-group
+      label Upload Image
+      input(type="file" name="image")
+
+    .btn-group
+      button.add-btn(type="submit") Add Item
+      a.back-btn(href="/admin/menu") Back
