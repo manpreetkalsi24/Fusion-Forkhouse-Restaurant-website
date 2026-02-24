@@ -1,9 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import path from "path";
+import mongoose from "mongoose"; 
+
 
 dotenv.config();
 const app = express ();
+
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("MongoDB Atlas Connected"))
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
 // this is to Express that we are using Pug files in /views
 app.set("view engine", "pug");

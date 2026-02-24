@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+  .menu-header
+    h1 Menu Management
+    a.add-btn(href="/admin/menu/add") + Add New Item
+
+  table.menu-table
+    thead
+      tr
+        th Image
+        th Name
+        th Category
+        th Description
+        th Price
+        th Actions
+
+    tbody
+      if menuItems.length === 0
+        tr
+          td(colspan="6") No menu items found.
+
+      each item in menuItems
+        tr
+          td
+            if item.image
+              img(src=item.image width="70")
+            else
+              span No Image
+
+          td= item.name
+          td.category= item.category
+          td= item.description
+          td.price $#{item.price}
+
+          td
+            a.edit-btn(href=`/admin/menu/edit/${item._id}`) Edit
+            a.delete-btn(href=`/admin/menu/delete/${item._id}` onclick="return confirm('Delete this item?')") Delete
