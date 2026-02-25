@@ -26,6 +26,8 @@ export const showAddMenuForm = (req, res) => {
   res.render("admin/addMenu");
 };
 
+//addMenuItem function
+
 export const addMenuItem = async (req, res) => {
   try {
     console.log(req.body);
@@ -47,5 +49,50 @@ export const addMenuItem = async (req, res) => {
   } catch (error) {
     console.log("FULL ERROR:", error);
     res.send(error.message);
+  }
+};
+
+//editMenu Function
+
+export const showEditMenuForm = async (req, res) => {
+  try {
+    const item = await Menu.findById(req.params.id);
+
+    if (!item) {
+      return res.send("Item not found");
+    }
+
+    res.render("admin/editMenu", { item });
+
+  } catch (error) {
+    console.log(error);
+    res.send("Error loading edit page");
+  }
+};
+
+
+export const updateMenuItem = async (req, res) => {
+  try {
+    const { name, category, price, description } = req.body;
+
+    const updatedData = {
+      name,
+      category,
+      price,
+      description
+    };
+
+    // If new image uploaded, update image
+    if (req.file) {
+      updatedData.image = "/uploads/" + req.file.filename;
+    }
+
+    await Menu.findByIdAndUpdate(req.params.id, updatedData);
+
+    res.redirect("/admin/menu");
+
+  } catch (error) {
+    console.log(error);
+    res.send("Error updating item");
   }
 };

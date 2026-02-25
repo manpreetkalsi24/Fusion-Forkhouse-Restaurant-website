@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+  h1 Edit Menu Item
+
+  form(method="POST" action=`/admin/menu/edit/${item._id}` enctype="multipart/form-data")
+
+    .form-group
+      label Name
+      input(type="text" name="name" value=item.name required)
+
+    .form-group
+      label Category
+      select(name="category" required)
+        option(value="Starters" selected=item.category==="Starters") Starters
+        option(value="Main Course" selected=item.category==="Main Course") Main Course
+        option(value="Drinks" selected=item.category==="Drinks") Drinks
+        option(value="Desserts" selected=item.category==="Desserts") Desserts
+        option(value="Special" selected=item.category==="Special") Special
+
+    .form-group
+      label Price
+      input(type="number" name="price" step="0.01" value=item.price required)
+
+    .form-group
+      label Description
+      textarea(name="description")= item.description
+
+    .form-group
+      label Current Image
+      if item.image
+        img(src=item.image width="100")
+
+    .form-group
+      label Change Image
+      input(type="file" name="image")
+
+    .btn-group
+      button.add-btn(type="submit") Update Item
+      a.back-btn(href="/admin/menu") Cancel

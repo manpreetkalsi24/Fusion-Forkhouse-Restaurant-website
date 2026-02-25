@@ -2,6 +2,7 @@ import express from "express";
 import { getDashboard } from "../controllers/adminController.js";
 import { getMenuPage } from "../controllers/adminController.js";
 import { showAddMenuForm, addMenuItem } from "../controllers/adminController.js";
+import { showEditMenuForm, updateMenuItem } from "../controllers/adminController.js";
 import multer from "multer";
 
 const router = express.Router();
@@ -21,12 +22,17 @@ const upload = multer({ storage });
 // Dashboard page
 router.get("/", getDashboard);
 
-//Menu Page
+//Display Menu items Page
 router.get("/menu", getMenuPage);
 
-// Add Menu
+// Add Menu item
 
 router.get("/menu/add", showAddMenuForm);
 router.post("/menu/add", upload.single("image"), addMenuItem);
+
+//edit menu item
+
+router.get("/menu/edit/:id", showEditMenuForm);
+router.post("/menu/edit/:id", upload.single("image"), updateMenuItem);
 
 export default router;
