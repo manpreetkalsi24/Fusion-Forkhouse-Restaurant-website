@@ -96,3 +96,20 @@ export const updateMenuItem = async (req, res) => {
     res.send("Error updating item");
   }
 };
+
+//delete menu item
+export const deleteMenuItem = async (req, res) => {
+  try {
+    console.log("DELETE ID:", req.params.id);
+
+    const deletedItem = await Menu.findByIdAndDelete(req.params.id);
+
+    console.log("Deleted Item:", deletedItem);
+
+    res.redirect("/admin/menu");
+
+  } catch (error) {
+    console.log("DELETE ERROR:", error);
+    res.send(error.message);
+  }
+};
