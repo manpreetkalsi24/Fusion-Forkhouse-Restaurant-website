@@ -2,10 +2,13 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import mongoose from "mongoose"; 
-
+import cors from "cors";
+import frontendRoutes from "./routes/frontendRoutes.js";
 
 dotenv.config();
 const app = express ();
+
+app.use(cors());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
@@ -25,6 +28,9 @@ app.use(express.static(path.join(process.cwd(), "public")));
 // Admin dashboard route
 import adminRoutes from "./routes/adminRoutes.js";
 app.use("/admin", adminRoutes);
+
+//frontend route for displaying menu items
+app.use("/", frontendRoutes);
 
 
 // test route
