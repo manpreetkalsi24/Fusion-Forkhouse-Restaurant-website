@@ -1,5 +1,7 @@
 import Menu from "../models/Menu.js";
 
+import Reservation from "../models/Reservation.js";
+
 // Dashboard controller
 export const getDashboard = (req, res) => {
   res.render("admin/dashboard", {
@@ -111,5 +113,18 @@ export const deleteMenuItem = async (req, res) => {
   } catch (error) {
     console.log("DELETE ERROR:", error);
     res.send(error.message);
+  }
+};
+
+// Load reservations page in admin panel
+export const getReservationsPage = async (req, res) => {
+  try {
+    const reservations = await Reservation.find().sort({ createdAt: -1 });
+
+    res.render("admin/reservations", { reservations });
+
+  } catch (error) {
+    console.log("Error loading reservations:", error);
+    res.send("Error loading reservations");
   }
 };

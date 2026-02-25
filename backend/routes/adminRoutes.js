@@ -4,6 +4,7 @@ import { getMenuPage } from "../controllers/adminController.js";
 import { showAddMenuForm, addMenuItem } from "../controllers/adminController.js";
 import { showEditMenuForm, updateMenuItem } from "../controllers/adminController.js";
 import { deleteMenuItem } from "../controllers/adminController.js";
+import { getReservationsPage } from "../controllers/adminController.js";
 import multer from "multer";
 
 const router = express.Router();
@@ -39,5 +40,8 @@ router.post("/menu/edit/:id", upload.single("image"), updateMenuItem);
 //delete menu item
 
 router.post("/menu/delete/:id", deleteMenuItem);
+
+// Reservations page
+router.get("/reservations", getReservationsPage);
 
 export default router;

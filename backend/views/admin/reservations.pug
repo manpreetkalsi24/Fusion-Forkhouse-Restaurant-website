@@ -1,0 +1,28 @@
+extends ../layout
+
+block content
+  h1 Reservations Management
+
+  if reservations.length === 0
+    p No reservations found.
+
+  else
+    table
+      thead
+        tr
+          th Name
+          th Email
+          th Date
+          th Time
+          th Guests
+          th Status
+
+      tbody
+        each r in reservations
+          tr
+            td #{r.firstName} #{r.lastName}
+            td= r.email
+            td= r.date
+            td= r.time
+            td= r.guests
+            td= r.status
