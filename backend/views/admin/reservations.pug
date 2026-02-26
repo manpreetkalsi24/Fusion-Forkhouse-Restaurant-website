@@ -16,6 +16,7 @@ block content
           th Time
           th Guests
           th Status
+          th Action
 
       tbody
         each r in reservations
@@ -26,3 +27,16 @@ block content
             td= r.time
             td= r.guests
             td= r.status
+            td
+              if r.status === "Pending"
+
+                // Approve form
+                form(method="POST" action=`/admin/reservations/approve/${r._id}` style="display:inline")
+                  button(type="submit" class="approve-btn") Approve
+
+                // Decline form
+                form(method="POST" action=`/admin/reservations/decline/${r._id}` style="display:inline")
+                  button(type="submit" class="decline-btn") Decline
+
+              else
+                span No action

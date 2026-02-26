@@ -55,3 +55,22 @@ h1 {
   margin-bottom: 15px;
   color: #1e3a5f;
 }
+
+.approve-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.decline-btn {
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

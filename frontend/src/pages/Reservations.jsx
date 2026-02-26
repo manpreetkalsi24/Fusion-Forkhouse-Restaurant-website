@@ -3,7 +3,7 @@ import "./Reservations.css";
 
 export default function Reservations() {
 
-  // This state stores all the form input values
+  // This state stores all form field values
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -15,8 +15,11 @@ export default function Reservations() {
     specialRequests: ""
   });
 
-  // This function runs whenever user types or selects something
-  // It updates the specific field in our form state
+  // This state controls the success or error message display
+  const [message, setMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // Updates form values when user types/selects something
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -24,10 +27,9 @@ export default function Reservations() {
     });
   };
 
-  // This function runs when user clicks "Book Table"
-  // It sends the reservation data to the backend
+  // Handles form submission
   const handleSubmit = async (e) => {
-    e.preventDefault(); // for Preventing page reload
+    e.preventDefault(); // Prevent page reload
 
     try {
       const response = await fetch("http://localhost:8888/api/reservations", {
@@ -40,11 +42,15 @@ export default function Reservations() {
 
       const data = await response.json();
 
-      // If backend responds successfully
       if (response.ok) {
-        alert("Your reservation has been submitted successfully!");
 
-        // Clear the form after submission
+        // Show proper confirmation message
+        setIsSuccess(true);
+        setMessage(
+          "Thank you for booking a table! A confirmation email will be sent to you shortly."
+        );
+
+        // Clear form after successful submission
         setFormData({
           firstName: "",
           lastName: "",
@@ -56,20 +62,26 @@ export default function Reservations() {
           specialRequests: ""
         });
 
+        // Auto hide message after 5 seconds
+        setTimeout(() => {
+          setMessage("");
+        }, 5000);
+
       } else {
-        alert(data.error || "Something went wrong.");
+        setIsSuccess(false);
+        setMessage(data.error || "Something went wrong. Please try again.");
       }
 
     } catch (error) {
       console.error("Error submitting reservation:", error);
-      alert("Server error. Please try again later.");
+      setIsSuccess(false);
+      setMessage("Server error. Please try again later.");
     }
   };
 
   return (
     <section className="reservation-page">
 
-      {/* Page heading section */}
       <div className="reservation-header">
         <h1>Book Your Table</h1>
         <p>
@@ -78,13 +90,17 @@ export default function Reservations() {
         </p>
       </div>
 
-      {/* Main form container */}
       <div className="reservation-container">
 
-        {/* Reservation form */}
+        {/* Display success or error message */}
+        {message && (
+          <div className={isSuccess ? "success-message" : "error-message"}>
+            {message}
+          </div>
+        )}
+
         <form className="reservation-form" onSubmit={handleSubmit}>
 
-          {/* First row - basic personal details */}
           <div className="form-row">
             <input
               type="text"
@@ -114,7 +130,6 @@ export default function Reservations() {
             />
           </div>
 
-          {/* Second row - email and date */}
           <div className="form-row">
             <input
               type="email"
@@ -134,7 +149,6 @@ export default function Reservations() {
             />
           </div>
 
-          {/* Third row - time and number of guests */}
           <div className="form-row">
             <select
               name="time"
@@ -143,10 +157,29 @@ export default function Reservations() {
               required
             >
               <option value="">Select Time *</option>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="10:30 AM">10:30 AM</option>
+              <option value="11:00 AM">11:00 AM</option>
+              <option value="11:30 AM">11:30 AM</option>
               <option value="12:00 PM">12:00 PM</option>
+              <option value="12:30 PM">12:30 PM</option>
               <option value="1:00 PM">1:00 PM</option>
+              <option value="1:30 PM">1:30 PM</option>
               <option value="2:00 PM">2:00 PM</option>
+              <option value="2:30 PM">2:30 PM</option>
+              <option value="3:00 PM">3:00 PM</option>
+              <option value="3:30 PM">3:30 PM</option>
+              <option value="4:00 PM">4:00 PM</option>
+              <option value="4:30 PM">4:30 PM</option>
+              <option value="5:00 PM">5:00 PM</option>
+              <option value="5:30 PM">5:30 PM</option>
               <option value="6:00 PM">6:00 PM</option>
+              <option value="6:30 PM">6:30 PM</option>
+              <option value="7:00 PM">7:00 PM</option>
+              <option value="8:00 PM">8:00 PM</option>
+              <option value="8:30 PM">8:30 PM</option>
+              <option value="9:00 PM">9:00 PM</option>
+              <option value="9:30 PM">9:30 PM</option>
               <option value="7:00 PM">7:00 PM</option>
               <option value="8:00 PM">8:00 PM</option>
             </select>
@@ -166,7 +199,6 @@ export default function Reservations() {
             </select>
           </div>
 
-          {/* Optional special requests message */}
           <textarea
             rows="4"
             name="specialRequests"
@@ -175,7 +207,6 @@ export default function Reservations() {
             onChange={handleChange}
           ></textarea>
 
-          {/* Submit button */}
           <button type="submit" className="reserve-btn">
             Book Table
           </button>

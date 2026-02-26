@@ -1,11 +1,12 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
+import express from "express";
 import path from "path";
 import mongoose from "mongoose"; 
 import cors from "cors";
 import frontendRoutes from "./routes/frontendRoutes.js";
 
-dotenv.config();
+
 const app = express ();
 
 app.use(cors());

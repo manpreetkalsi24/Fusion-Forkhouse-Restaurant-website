@@ -81,7 +81,7 @@ export default function Contact() {
               ></textarea>
 
               <button type="submit" className="contact-btn">
-                Book Table
+                Submit
               </button>
 
             </form>

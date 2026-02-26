@@ -73,6 +73,28 @@
   background-color: #6f1f1f;
 }
 
+/* Success message style */
+.success-message {
+  background-color: #eafaf1;
+  color: #2e7d32;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #27ae60;
+  font-weight: 500;
+}
+
+/* Error message style */
+.error-message {
+  background-color: #fdecea;
+  color: #c62828;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  border: 1px solid #e74c3c;
+  font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .form-row {
