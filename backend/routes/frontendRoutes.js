@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-// API route for menu(JSON)
+// API route for menu
 router.get("/api/menu", async (req, res) => {
   try {
     const menuItems = await Menu.find();
@@ -89,7 +89,7 @@ router.post("/api/reservations", async (req, res) => {
 });
 
 // Save contact message
-router.post("/contact", async (req, res) => {
+router.post("/api/contact", async (req, res) => {
   try {
     const { firstName, lastName, email, message } = req.body;
 
