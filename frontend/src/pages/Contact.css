@@ -107,6 +107,28 @@
   background-color: #6f1f1f;
 }
 
+/* Success message */
+.success-message {
+  background-color: #eafaf1;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #27ae60;
+  font-weight: 500;
+}
+
+/* Error message */
+.error-message {
+  background-color: #fdecea;
+  color: #c62828;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #e74c3c;
+  font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-content {

@@ -2,6 +2,8 @@ import Menu from "../models/Menu.js";
 
 import Reservation from "../models/Reservation.js";
 
+import Contact from "../models/Contact.js";
+
 import nodemailer from "nodemailer";
 
 // Email transporter for admin actions
@@ -298,5 +300,16 @@ export const declineReservation = async (req, res) => {
   } catch (error) {
     console.log("Decline Error:", error);
     res.send("Error declining reservation");
+  }
+};
+
+// Show contact messages in admin
+export const getContactMessages = async (req, res) => {
+  try {
+    const messages = await Contact.find().sort({ createdAt: -1 });
+    res.render("admin/contact", { messages });
+  } catch (error) {
+    console.log("Error fetching messages:", error);
+    res.send("Error loading messages");
   }
 };

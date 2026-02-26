@@ -1,6 +1,7 @@
 import express from "express";
 import Menu from "../models/Menu.js";
 import Reservation from "../models/Reservation.js";
+import Contact from "../models/Contact.js";
 import nodemailer from "nodemailer";
 const router = express.Router();
 
@@ -44,7 +45,7 @@ router.post("/api/reservations", async (req, res) => {
 // This route handles reservation form submission
 router.post("/api/reservations", async (req, res) => {
   try {
-    // Check if same date & time already booked (not declined)
+    // Check if same date & time already booked
     const existingReservation = await Reservation.findOne({
       date: req.body.date,
       time: req.body.time,
@@ -87,5 +88,26 @@ router.post("/api/reservations", async (req, res) => {
   }
 });
 
+// Save contact message
+router.post("/contact", async (req, res) => {
+  try {
+    const { firstName, lastName, email, message } = req.body;
+
+    const newMessage = new Contact({
+      firstName,
+      lastName,
+      email,
+      message
+    });
+
+    await newMessage.save();
+
+    res.status(200).json({ message: "Message sent successfully" });
+
+  } catch (error) {
+    console.log("Contact Error:", error);
+    res.status(500).json({ error: "Error saving message" });
+  }
+});
 
 export default router;

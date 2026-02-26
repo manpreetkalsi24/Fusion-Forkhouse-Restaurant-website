@@ -5,6 +5,7 @@ import { showAddMenuForm, addMenuItem } from "../controllers/adminController.js"
 import { showEditMenuForm, updateMenuItem } from "../controllers/adminController.js";
 import { deleteMenuItem } from "../controllers/adminController.js";
 import { getReservationsPage,approveReservation,declineReservation } from "../controllers/adminController.js";
+import { getContactMessages } from "../controllers/adminController.js";
 import multer from "multer";
 
 const router = express.Router();
@@ -49,5 +50,8 @@ router.post("/reservations/approve/:id", approveReservation);
 
 // Decline reservation
 router.post("/reservations/decline/:id", declineReservation);
+
+//route for contact messages
+router.get("/contact", getContactMessages);
 
 export default router;
