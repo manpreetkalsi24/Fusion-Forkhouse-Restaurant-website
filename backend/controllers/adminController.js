@@ -16,14 +16,24 @@ const transporter = nodemailer.createTransport({
 });
 
 // Dashboard controller
-export const getDashboard = (req, res) => {
-  res.render("admin/dashboard", {
-    title: "Fusion Forkhouse Admin Dashboard",
-    menuCount: 12,
-    reservationCount: 26,
-    contactCount: 8,
-    reviewCount: 14
-  });
+
+export const getDashboard = async (req, res) => {
+  try {
+    const menuCount = await Menu.countDocuments();
+    const reservationCount = await Reservation.countDocuments();
+    const contactCount = await Contact.countDocuments();
+
+    res.render("admin/dashboard", {
+      title: "Fusion Forkhouse Admin Dashboard",
+      menuCount,
+      reservationCount,
+      contactCount
+    });
+
+  } catch (error) {
+    console.error("Dashboard Error:", error);
+    res.status(500).send("Error loading dashboard");
+  }
 };
 
 //Menu Controller
@@ -182,7 +192,7 @@ export const approveReservation = async (req, res) => {
     html: `
       <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
         
-        <h2 style="color: #2e7d32;">Reservation Confirmed</h2>
+        <h2 style="color:#2e7d32;">Reservation Confirmed</h2>
 
         <p>Dear ${reservation.firstName} ${reservation.lastName},</p>
 
