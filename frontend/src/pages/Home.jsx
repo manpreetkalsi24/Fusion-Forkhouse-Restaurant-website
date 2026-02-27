@@ -6,6 +6,15 @@ import HeroSlider from "../components/HeroSlider";
 
 export default function Home() {
 
+  const [popularDishes, setPopularDishes] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8888/api/popular")
+      .then(res => res.json())
+      .then(data => setPopularDishes(data))
+      .catch(err => console.error(err));
+  }, []);
+
   return (
     <div className="home-page">
 
@@ -69,60 +78,18 @@ export default function Home() {
 
         {/* Dishes Grid */}
         <div className="dishes-grid">
-
-          {/* Dish Card 1 */}
-          <div className="dish-card">
-            <img src="/images/t1.jpg" alt="Tandoori Wings" />
-            <div className="dish-info">
-              <h3>Tandoori Wings</h3>
-              <span>$12.99</span>
+          {popularDishes.map((dish) => (
+            <div className="dish-card" key={dish._id}>
+              <img 
+                src={`http://localhost:8888/${dish.image}`} 
+                alt={dish.name} 
+              />
+              <div className="dish-info">
+                <h3>{dish.name}</h3>
+                <span>${dish.price}</span>
+              </div>
             </div>
-          </div>
-
-          {/* Dish Card 2 */}
-          <div className="dish-card">
-            <img src="/images/g1.jpg" alt="Grilled Salmon" />
-            <div className="dish-info">
-              <h3>Grilled Salmon</h3>
-              <span>$24.99</span>
-            </div>
-          </div>
-
-          {/* Dish Card 3 */}
-          <div className="dish-card">
-            <img src="/images/cs2.jpg" alt="Classic Caesar Salad" />
-            <div className="dish-info">
-              <h3>Classic Caesar Salad</h3>
-              <span>$11.99</span>
-            </div>
-          </div>
-
-          {/* Dish Card 4 */}
-          <div className="dish-card">
-            <img src="/images/tm3.webp" alt="Tiramisu" />
-            <div className="dish-info">
-              <h3>Tiramisu</h3>
-              <span>$10.99</span>
-            </div>
-          </div>
-
-          {/* Dish Card 5 */}
-          <div className="dish-card">
-            <img src="/images/cp3.jpg" alt="Chaat Papdi" />
-            <div className="dish-info">
-              <h3>Chaat Papdi</h3>
-              <span>$8.99</span>
-            </div>
-          </div>
-
-          {/* Dish Card 6 */}
-          <div className="dish-card">
-            <img src="/images/a1.jpg" alt="Grilled Asparagus" />
-            <div className="dish-info">
-              <h3>Grilled Asparagus</h3>
-              <span>$7.99</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -150,7 +117,9 @@ export default function Home() {
           </div>
 
           {/* contact now Button */}
-          <button className="order-btn">Contact Now</button>
+          <Link to="/contact" className="slider-btn">
+            Contact Us
+          </Link>
 
         </div>
 
@@ -160,7 +129,6 @@ export default function Home() {
         </div>
 
       </section>
-
 
     </div>
   );

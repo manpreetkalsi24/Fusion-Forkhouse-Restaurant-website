@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 80px;
-  padding: 80px 8%;
+  padding: 80px 8% 0;
   width:1200px;
   margin: auto;
 }

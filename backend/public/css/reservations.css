@@ -33,20 +33,19 @@ table tbody tr:hover {
   transition: 0.2s ease;
 }
 
-td:last-child {
+.status.pending {
+  color: orange;
   font-weight: 600;
 }
 
-td:contains("Pending") {
-  color: orange;
-}
-
-td:contains("Approved") {
+.status.approved {
   color: green;
+  font-weight: 600;
 }
 
-td:contains("Declined") {
+.status.declined {
   color: red;
+  font-weight: 600;
 }
 
 /* Page title */

@@ -23,10 +23,6 @@ block content
       input(type="number" name="price" step="0.01" value=item.price required)
 
     .form-group
-      label Description
-      textarea(name="description")= item.description
-
-    .form-group
       label Current Image
       if item.image
         img(src=item.image width="100")

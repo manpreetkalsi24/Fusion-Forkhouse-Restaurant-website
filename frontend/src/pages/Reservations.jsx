@@ -126,6 +126,8 @@ export default function Reservations() {
               placeholder="Phone Number *"
               value={formData.phone}
               onChange={handleChange}
+              pattern="[0-9]{10}"
+              maxLength="10"
               required
             />
           </div>

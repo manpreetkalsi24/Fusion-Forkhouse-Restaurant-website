@@ -110,4 +110,18 @@ router.post("/api/contact", async (req, res) => {
   }
 });
 
+// for showing some random dishes on homepage
+router.get("/api/popular", async (req, res) => {
+  try {
+    const randomItems = await Menu.aggregate([
+      { $sample: { size: 6 } } 
+    ]);
+
+    res.json(randomItems);
+  } catch (error) {
+    console.error("Popular Items Error:", error);
+    res.status(500).json({ error: "Error fetching popular dishes" });
+  }
+});
+
 export default router;

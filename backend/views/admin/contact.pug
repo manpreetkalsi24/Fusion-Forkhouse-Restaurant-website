@@ -20,4 +20,4 @@ block content
             td #{msg.firstName} #{msg.lastName}
             td= msg.email
             td= msg.message
-            td= msg.createdAt.toDateString()
+            td= new Date(msg.createdAt).toLocaleDateString('en-GB', {weekday: 'long', day: '2-digit', month: 'short', year: 'numeric'})

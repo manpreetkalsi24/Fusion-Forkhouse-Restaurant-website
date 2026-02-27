@@ -11,11 +11,13 @@ const reservationSchema = new mongoose.Schema({
   },
   phone: {
     type: String,
-    required: true
+    required: true,
+    match: [/^\d{10}$/, "Phone number must be exactly 10 digits"]
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please enter a valid email"]
   },
   date: {
     type: String,

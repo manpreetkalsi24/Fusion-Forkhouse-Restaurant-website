@@ -11,13 +11,13 @@ html, body {
   color: #2c2c2c;
 }
 
-/* MAIN LAYOUT */
+/* Main Layout */
 .admin-container {
   display: flex;
   min-height: 100vh;
 }
 
-/* SIDEBAR */
+/* Sidebar */
 .sidebar {
   width: 240px;
   background-color: #011f4b;
@@ -28,12 +28,15 @@ html, body {
   flex-shrink: 0;
 }
 
-.sidebar .logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 50px;
-  text-align: center;
-  color: #f6c89f;
+.logo img {
+  vertical-align: middle;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
 .nav-links {
@@ -67,7 +70,7 @@ html, body {
   font-size: 1.2rem;
 }
 
-/* RIGHT CONTENT */
+/* Right Content */
 .main-content {
   flex: 1;
   display: flex;
@@ -75,20 +78,20 @@ html, body {
   background-color: #fff;
 }
 
-/* PAGE CONTENT */
+/* Page Content */
 .content {
   flex: 1;
   padding: 30px 50px;
   background-color: #fdfdfd;
 }
 
-/* HEADINGS */
+/* Headings */
 h1, h2 {
   color: #1e3a56;
   margin-bottom: 20px;
 }
 
-/* DASHBOARD STATS */
+/* Dashboard Stats */
 .stats-container {
     display: grid;
     grid-template-columns: repeat(3, minmax(240px, 1fr));
@@ -132,7 +135,7 @@ h1, h2 {
   color: #c57b57;
 }
 
-/* FOOTER */
+/* Footer */
 .admin-footer {
   background-color: #011f4b;
   color: #fff;
@@ -145,7 +148,6 @@ h1, h2 {
 .admin-footer p {
   margin: 4px 0;
 }
-
 
 /* Menu Page Css */
 
@@ -168,31 +170,6 @@ h1, h2 {
 
 .add-btn:hover {
   background: #084298;
-}
-
-/* Table */
-.menu-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.menu-table thead {
-  background: #1f3c88;
-  color: white;
-}
-
-.menu-table th,
-.menu-table td {
-  padding: 14px;
-  text-align: center;
-}
-
-.menu-table tr:nth-child(even) {
-  background: #f5f7fa;
 }
 
 .menu-table img {
@@ -228,6 +205,7 @@ h1, h2 {
   border-radius: 6px;
   text-decoration: none;
   color: white;
+  border:none;
 }
 
 /* Add menu page css */

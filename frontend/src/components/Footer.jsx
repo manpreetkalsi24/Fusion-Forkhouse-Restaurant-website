@@ -27,7 +27,7 @@ export default function Footer() {
         
         <div className="footer-column">
           <h4>Address</h4>
-          <p>205 Humber College Blvd, Toronto, ON M9W 5L7</p>
+          <p>58 Upper Humber Drive, Etobicoke, ON M9W 7B6</p>
 
           <h4>Operation Hours</h4>
           <p>Mon-Sat: 9:00 AM - 10:30 PM</p>

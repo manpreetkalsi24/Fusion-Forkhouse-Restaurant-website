@@ -26,7 +26,7 @@ block content
             td= r.date
             td= r.time
             td= r.guests
-            td= r.status
+            td(class=`status ${r.status.toLowerCase()}`)= r.status
             td
               if r.status === "Pending"
 
