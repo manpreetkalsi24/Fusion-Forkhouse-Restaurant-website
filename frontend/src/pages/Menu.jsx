@@ -10,7 +10,7 @@ export default function Menu() {
 
     // Fetch from backend
     useEffect(() => {
-        fetch("http://localhost:8888/api/menu")
+        fetch(`${import.meta.env.VITE_API_URL}/api/menu`)
             .then(res => res.json())
             .then(data => setMenuItems(data))
             .catch(err => console.error("Error fetching menu:", err));
@@ -54,10 +54,15 @@ export default function Menu() {
             <div className="menu-grid">
                 {filteredItems.map((item) => (
                     <div className="menu-card" key={item._id}>
-                        <img 
+                        {/* <img 
                           src={`http://localhost:8888${item.image}`} 
                           alt={item.name} 
-                        />
+                        /> */}
+
+                        <img 
+                            src={`${import.meta.env.VITE_API_URL}${item.image}`} 
+                            alt={item.name} 
+                            />
                         <div className="menu-info">
                             <h3>{item.name}</h3>
                             <span>${Number(item.price).toFixed(2)}</span>

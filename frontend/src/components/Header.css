@@ -95,4 +95,17 @@ a:hover {
   .nav-links {
     gap: 1.2rem;
   }
+
+  .logo {
+    font-size: 18px;
+}
+
+.nav-links a {
+    font-size: 13px;
+}
+.book-btn {
+    padding: 5px 10px;
+    font-size: 13px;
+}
+
 }

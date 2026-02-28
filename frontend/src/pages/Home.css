@@ -300,3 +300,22 @@
   width: 90%;
   max-width: 500px;
 }
+
+@media (max-width: 768px) {
+
+
+.feature-item h3 {
+    font-size: 13px;
+}
+.feature-icon img {
+    width: 30px;
+}
+
+.feature-icon {
+    height: 70px;
+}
+
+.features-section {
+    padding: 40px 4%;
+}
+}

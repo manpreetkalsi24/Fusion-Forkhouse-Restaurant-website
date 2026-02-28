@@ -63,3 +63,19 @@
 .slider-btn:hover {
   background-color: #a85f1f;
 }
+
+@media (max-width: 768px) {
+.overlay h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.overlay p {
+    font-size: 16px;
+}
+
+.slider-btn {
+    padding: 10px;
+    font-size: 13px;
+}
+}
