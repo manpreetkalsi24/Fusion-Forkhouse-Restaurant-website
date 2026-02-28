@@ -11,10 +11,13 @@ import adminRoutes from "./routes/adminRoutes.js";
 const app = express();
 
 // CORS configuration
+import cors from "cors";
+
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://fusion-forkhouse-restaurant.vercel.app"
+    "https://fusion-forkhouse-restaurant-website.vercel.app",
+    "https://fusion-forkhouse-restaurant-website-ep5ur3x7f.vercel.app"
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
