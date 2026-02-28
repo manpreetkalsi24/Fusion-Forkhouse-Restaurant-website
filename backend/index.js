@@ -1,45 +1,49 @@
 import dotenv from "dotenv";
 dotenv.config();
+
 import express from "express";
 import path from "path";
 import mongoose from "mongoose"; 
 import cors from "cors";
 import frontendRoutes from "./routes/frontendRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
+const app = express();
 
-const app = express ();
-
-app.use(cors());
-
+// CORS configuration
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://fusion-forkhouse-restaurant.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Atlas Connected"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
-// this is to Express that we are using Pug files in /views
+// Pug setup
 app.set("view engine", "pug");
 app.set("views", path.join(process.cwd(), "views"));
 
-// Middleware for form data 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Static files (CSS / images / JS)
+// Static files
 app.use(express.static(path.join(process.cwd(), "public")));
 
-// Admin dashboard route
-import adminRoutes from "./routes/adminRoutes.js";
+// Routes
 app.use("/admin", adminRoutes);
-
-//frontend route for displaying menu items
 app.use("/", frontendRoutes);
 
-
-// test route
+// Test route
 app.get("/", (req, res) => {
   res.send("Backend running. Go to /admin");
 });
 
 const port = process.env.PORT || 8888;
-app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
+app.listen(port, () => console.log(`Server running on port ${port}`));
