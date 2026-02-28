@@ -8,8 +8,15 @@ export default function Home() {
 
   const [popularDishes, setPopularDishes] = useState([]);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:8888/api/popular")
+  //     .then(res => res.json())
+  //     .then(data => setPopularDishes(data))
+  //     .catch(err => console.error(err));
+  // }, []);
+
   useEffect(() => {
-    fetch("http://localhost:8888/api/popular")
+    fetch(`${import.meta.env.VITE_API_URL}/api/popular`)
       .then(res => res.json())
       .then(data => setPopularDishes(data))
       .catch(err => console.error(err));
@@ -80,8 +87,12 @@ export default function Home() {
         <div className="dishes-grid">
           {popularDishes.map((dish) => (
             <div className="dish-card" key={dish._id}>
-              <img 
+              {/* <img 
                 src={`http://localhost:8888/${dish.image}`} 
+                alt={dish.name} 
+              /> */}
+              <img 
+                src={`${import.meta.env.VITE_API_URL}${dish.image}`} 
                 alt={dish.name} 
               />
               <div className="dish-info">
