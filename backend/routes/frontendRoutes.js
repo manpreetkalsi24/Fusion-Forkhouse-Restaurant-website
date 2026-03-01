@@ -20,7 +20,7 @@ const transporter = nodemailer.createTransport({
 // API route for menu
 router.get("/api/menu", async (req, res) => {
   try {
-    const menuItems = await Menu.find();
+    const menuItems = await Menu.find().sort({ createdAt: -1 });
     res.json(menuItems);
   } catch (error) {
     res.status(500).json({ error: "Error fetching menu" });

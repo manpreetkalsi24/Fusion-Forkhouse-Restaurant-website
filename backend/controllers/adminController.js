@@ -41,7 +41,7 @@ export const getDashboard = async (req, res) => {
 //Menu Controller
 export const getMenuPage = async (req, res) => {
   try {
-    const menuItems = await Menu.find();
+    const menuItems = await Menu.find().sort({ createdAt: -1 });
     res.render("admin/menu", { menuItems });
   } catch (error) {
     console.log(error);
