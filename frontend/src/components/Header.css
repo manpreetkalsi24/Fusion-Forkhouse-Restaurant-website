@@ -200,9 +200,10 @@ a:hover {
 @media (max-width: 480px) {
 
   .navbar-container {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
     padding: 0.8rem 1rem;
+    justify-content: space-between;
   }
 
   .nav-links {
