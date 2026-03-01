@@ -15,6 +15,7 @@ block content
           th Date
           th Time
           th Guests
+          th Special Requests
           th Status
           th Action
 
@@ -26,6 +27,7 @@ block content
             td= r.date
             td= r.time
             td= r.guests
+            td= r.specialRequests ? r.specialRequests : "—"
             td(class=`status ${r.status.toLowerCase()}`)= r.status
             td
               if r.status === "Pending"

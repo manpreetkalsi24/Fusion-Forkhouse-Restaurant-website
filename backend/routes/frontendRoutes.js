@@ -34,7 +34,8 @@ router.post("/api/reservations", async (req, res) => {
     const existingReservation = await Reservation.findOne({
       date: req.body.date,
       time: req.body.time,
-      status: { $ne: "Declined" }
+      status: { $ne: "Declined" },
+      specialRequests: req.body.specialRequests
     });
 
     // if (existingReservation) {
