@@ -4,23 +4,26 @@ block content
   h2 Welcome to Admin Dashboard
 
   .stats-container
-    .stat-box
-      i.fa-solid.fa-utensils
-      .stat-info
-        h3 Total Menu Items
-        p #{menuCount}
 
-    .stat-box
-      i.fa-solid.fa-calendar-check
-      .stat-info
-        h3 Total Reservations
-        p #{reservationCount}
+    a.stat-link(href="/admin/menu")
+      .stat-box
+        i.fa-solid.fa-utensils
+        .stat-info
+          h3 Total Menu Items
+          p #{menuCount}
 
-    .stat-box
-      i.fa-solid.fa-envelope
-      .stat-info
-        h3 Contact Messages
-        p #{contactCount}
+    a.stat-link(href="/admin/reservations")
+      .stat-box
+        i.fa-solid.fa-calendar-check
+        .stat-info
+          h3 Total Reservations
+          p #{reservationCount}
 
+    a.stat-link(href="/admin/contact")
+      .stat-box
+        i.fa-solid.fa-envelope
+        .stat-info
+          h3 Contact Messages
+          p #{contactCount}
     
 

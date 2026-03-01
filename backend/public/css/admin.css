@@ -110,10 +110,10 @@ h1, h2 {
   transition: all 0.3s ease;
 }
 
-.stat-box:hover {
+/* .stat-box:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
-}
+} */
 
 .stat-box i {
   font-size: 2.4rem;
@@ -133,6 +133,21 @@ h1, h2 {
   font-weight: 700;
   margin-top: 6px;
   color: #c57b57;
+}
+
+.stat-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.stat-link .stat-box {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-link .stat-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Footer */
