@@ -32,11 +32,14 @@
 
 .overlay {
   position: absolute;
-  bottom: 30%;
-  left: 10%;
-  color: white;
-  max-width: 600px;
-  z-index: 2; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  z-index: 2;
 }
 
 .overlay h1 {
