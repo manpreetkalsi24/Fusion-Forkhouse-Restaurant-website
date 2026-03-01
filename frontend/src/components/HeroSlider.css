@@ -96,7 +96,7 @@
 @media (max-width: 768px) {
 
   .hero-slider {
-    height: 70vh;
+    height: 60vh;
   }
 
   .overlay {
@@ -128,7 +128,7 @@
 @media (max-width: 480px) {
 
   .hero-slider {
-    height: 60vh;
+    height: 20vh;
   }
 
   .overlay {

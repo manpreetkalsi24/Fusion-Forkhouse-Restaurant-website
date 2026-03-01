@@ -315,6 +315,10 @@
     text-align: center;
   }
 
+  .dish-info {
+    font-size: 14px;
+  }
+
   .feature-item {
     flex-direction: column;
   }
@@ -448,7 +452,7 @@
 
   .dish-info {
     padding: 12px 15px;
-    font-size: 0.9rem;
+    font-size: 12px;
   }
 
   /* Why Section */
