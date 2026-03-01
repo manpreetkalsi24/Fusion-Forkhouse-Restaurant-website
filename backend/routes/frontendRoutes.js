@@ -7,12 +7,15 @@ const router = express.Router();
 
 // Created email transporter using Gmail
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
+    pass: process.env.EMAIL_PASS,
+  },
 });
+
 
 // API route for menu
 router.get("/api/menu", async (req, res) => {
@@ -21,24 +24,6 @@ router.get("/api/menu", async (req, res) => {
     res.json(menuItems);
   } catch (error) {
     res.status(500).json({ error: "Error fetching menu" });
-  }
-});
-
-//API route for reservations
-router.post("/api/reservations", async (req, res) => {
-  try {
-    const reservation = new Reservation(req.body);
-    await reservation.save();
-
-    res.status(200).json({
-      message: "Reservation submitted successfully"
-    });
-
-  } catch (error) {
-    console.log("Reservation Error:", error);
-    res.status(500).json({
-      error: "Error saving reservation"
-    });
   }
 });
 
