@@ -150,7 +150,7 @@ h1, h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.logout-btn {
+/* .logout-btn {
   display: inline-block;
   background-color: #8b2c2c;
   color: white;
@@ -163,7 +163,7 @@ h1, h2 {
 
 .logout-btn:hover {
   background-color: #6f1f1f;
-}
+} */
 /* Footer */
 .admin-footer {
   background-color: #011f4b;
