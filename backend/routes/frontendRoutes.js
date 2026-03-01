@@ -37,11 +37,11 @@ router.post("/api/reservations", async (req, res) => {
       status: { $ne: "Declined" }
     });
 
-    if (existingReservation) {
-      return res.status(400).json({
-        error: "This time slot is already booked. Please choose another time."
-      });
-    }
+    // if (existingReservation) {
+    //   return res.status(400).json({
+    //     error: "This time slot is already booked. Please choose another time."
+    //   });
+    // }
     // Save reservation in database
     const reservation = new Reservation(req.body);
     await reservation.save();
