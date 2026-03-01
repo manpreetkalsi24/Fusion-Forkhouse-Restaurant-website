@@ -7,13 +7,12 @@ import { deleteMenuItem } from "../controllers/adminController.js";
 import { getReservationsPage,approveReservation,declineReservation } from "../controllers/adminController.js";
 import { getContactMessages } from "../controllers/adminController.js";
 import multer from "multer";
+import bcrypt from "bcrypt";
 
 const router = express.Router();
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "public/uploads/");
-  },
+  destination: "/opt/render/project/src/uploads",
   filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
   }
@@ -21,37 +20,63 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+function isAuthenticated(req, res, next) {
+  if (req.session.admin) {
+    return next();
+  }
+  res.redirect("/admin/login");
+}
 
+router.get("/login", (req, res) => {
+  res.render("admin/login");
+});
+
+router.post("/login", async (req, res) => {
+  const { username, password } = req.body;
+
+  // Hardcoded admin for now
+  const adminUser = "admin";
+  const adminPass = "123456"; 
+
+  if (username === adminUser && password === adminPass) {
+    req.session.admin = true;
+    return res.redirect("/admin");
+  }
+
+  res.redirect("/admin/login");
+});
 // Dashboard page
-router.get("/", getDashboard);
+router.get("/", isAuthenticated, getDashboard);
 
-//Display Menu items Page
-router.get("/menu", getMenuPage);
+router.get("/menu", isAuthenticated, getMenuPage);
 
 // Add Menu item
+router.get("/menu/add", isAuthenticated, showAddMenuForm);
+router.post("/menu/add", isAuthenticated, upload.single("image"), addMenuItem);
 
-router.get("/menu/add", showAddMenuForm);
-router.post("/menu/add", upload.single("image"), addMenuItem);
+// Edit menu item
+router.get("/menu/edit/:id", isAuthenticated, showEditMenuForm);
+router.post("/menu/edit/:id", isAuthenticated, upload.single("image"), updateMenuItem);
 
-//edit menu item
-
-router.get("/menu/edit/:id", showEditMenuForm);
-router.post("/menu/edit/:id", upload.single("image"), updateMenuItem);
-
-//delete menu item
-
-router.post("/menu/delete/:id", deleteMenuItem);
+// Delete menu item
+router.post("/menu/delete/:id", isAuthenticated, deleteMenuItem);
 
 // Reservations page
-router.get("/reservations", getReservationsPage);
+router.get("/reservations", isAuthenticated, getReservationsPage);
 
 // Approve reservation
-router.post("/reservations/approve/:id", approveReservation);
+router.post("/reservations/approve/:id", isAuthenticated, approveReservation);
 
 // Decline reservation
-router.post("/reservations/decline/:id", declineReservation);
+router.post("/reservations/decline/:id", isAuthenticated, declineReservation);
 
-//route for contact messages
-router.get("/contact", getContactMessages);
+// Contact messages
+router.get("/contact", isAuthenticated, getContactMessages);
+
+router.get("/logout", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/admin/login");
+  });
+});
 
 export default router;

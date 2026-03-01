@@ -30,7 +30,6 @@ router.get("/api/menu", async (req, res) => {
 // This route handles reservation form submission
 router.post("/api/reservations", async (req, res) => {
   try {
-    // Check if same date & time already booked
     const existingReservation = await Reservation.findOne({
       date: req.body.date,
       time: req.body.time,

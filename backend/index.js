@@ -3,6 +3,7 @@ dotenv.config();
 
 import express from "express";
 import path from "path";
+import session from "express-session";
 import mongoose from "mongoose"; 
 import cors from "cors";
 import frontendRoutes from "./routes/frontendRoutes.js";
@@ -22,6 +23,16 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Atlas Connected"))
   .catch((err) => console.error("MongoDB Connection Error:", err));
 
+
+app.use(
+  session({
+    secret: "fusionforkhouse_secret_key",
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }
+  })
+);
+
 // Pug setup
 app.set("view engine", "pug");
 app.set("views", path.join(process.cwd(), "views"));
@@ -32,6 +43,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // Static files
 app.use(express.static(path.join(process.cwd(), "public")));
+
+// Serve uploads folder (persistent disk)
+app.use("/uploads", express.static("/opt/render/project/src/uploads"));
 
 // Routes
 app.use("/admin", adminRoutes);
