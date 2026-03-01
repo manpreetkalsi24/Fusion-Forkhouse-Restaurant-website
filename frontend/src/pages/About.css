@@ -87,13 +87,137 @@
 }
 
 /* Responsiveness */
-@media (max-width: 992px) {
+@media (max-width: 1366px) and (min-width: 1025px) {
+
+  .about-content {
+    width: 1000px;
+    gap: 60px;
+  }
+
+  .about-hero h1 {
+    font-size: 36px;
+  }
+
+  .about-hero h2 {
+    font-size: 44px;
+  }
+
+  .about-text h2 {
+    font-size: 36px;
+  }
+
+  .about-image img {
+    width: 340px;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+
+  .about-content {
+    width: 90%;
+    gap: 50px;
+  }
+
+  .about-hero {
+    height: 350px;
+  }
+
+  .about-hero .overlay {
+    padding-left: 60px;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .about-hero h2 {
+    font-size: 38px;
+  }
+
+  .about-text h2 {
+    font-size: 32px;
+  }
+
+  .about-image img {
+    width: 300px;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
   .about-content {
     flex-direction: column;
     text-align: center;
+    width: 90%;
+    padding: 60px 5% 0;
+  }
+
+  .about-hero {
+    height: 280px;
+    margin: 20px 0;
   }
 
   .about-hero .overlay {
     padding-left: 30px;
+    justify-content: center;
   }
+
+  .about-hero h1 {
+    font-size: 26px;
+  }
+
+  .about-hero h2 {
+    font-size: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 28px;
+  }
+
+  .about-image img {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .about-hero {
+    height: 220px;
+  }
+
+  .about-hero .overlay {
+    padding-left: 20px;
+  }
+
+  .about-hero h1 {
+    font-size: 20px;
+  }
+
+  .about-hero h2 {
+    font-size: 24px;
+  }
+
+  .small-title {
+    font-size: 12px;
+  }
+
+  .about-text h2 {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .about-image img {
+    width: 200px;
+  }
+
 }

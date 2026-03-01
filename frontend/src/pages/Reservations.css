@@ -96,8 +96,98 @@
 }
 
 /* Responsive */
+@media (max-width: 1366px) and (min-width: 1025px) {
+
+  .reservation-container {
+    max-width: 700px;
+  }
+
+  .reservation-header h1 {
+    font-size: 42px;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+
+  .reservation-container {
+    max-width: 90%;
+  }
+
+  .reservation-header h1 {
+    font-size: 36px;
+  }
+
+  .reservation-header p {
+    font-size: 14px;
+  }
+
+}
+
+
 @media (max-width: 768px) {
+
+  .reservation-page {
+    padding: 40px 15px 80px;
+  }
+
+  .reservation-header h1 {
+    font-size: 28px;
+  }
+
+  .reservation-header p {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
   .form-row {
     flex-direction: column;
+    gap: 15px;
   }
+
+  .reservation-form input,
+  .reservation-form select,
+  .reservation-form textarea {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .reserve-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .reservation-header h1 {
+    font-size: 22px;
+  }
+
+  .reservation-header p {
+    font-size: 13px;
+  }
+
+  .reservation-container {
+    width: 100%;
+  }
+
+  .reservation-form {
+    gap: 15px;
+  }
+
+  .reservation-form input,
+  .reservation-form select,
+  .reservation-form textarea {
+    font-size: 12px;
+  }
+
+  .reserve-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
 }
