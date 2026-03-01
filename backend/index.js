@@ -11,7 +11,6 @@ import adminRoutes from "./routes/adminRoutes.js";
 const app = express();
 
 // CORS configuration
-import cors from "cors";
 
 app.use(cors({
   origin: [
