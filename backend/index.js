@@ -13,13 +13,9 @@ const app = express();
 // CORS configuration
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://fusion-forkhouse-restaurant-website.vercel.app",
-    "https://fusion-forkhouse-restaurant-website-ep5ur3x7f.vercel.app"
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
+  origin: true,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
 }));
 
 // MongoDB Connection
